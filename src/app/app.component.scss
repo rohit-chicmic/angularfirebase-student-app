@@ -1,10 +1,13 @@
-.px-4 {
-    padding-right: 1.5rem!important;
-    padding-left: 15rem!important;
-}
+
 
 @media (min-width: 992px){
 .col-lg-10 {
     flex: 0 0 auto;
     width: 100%;
-}}
+    
+    }
+.px-4 {
+    padding-right: 1.5rem!important;
+    padding-left: 15rem!important;
+    }
+}
