@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+// import { a} from '@angular/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
@@ -12,6 +13,7 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AngularFireDatabaseModule,
     ToastrModule.forRoot(),
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
