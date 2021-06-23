@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmailValidator } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import * as XLSX from 'xlsx';
 import { CrudService } from '../shared/crud.service';
 import { Student } from '../shared/student';
 @Component({
@@ -47,7 +46,7 @@ export class AddBulkStudentsComponent implements OnInit {
           return initial;
         }, {});
         this.userData = jsonData[Object.keys(jsonData)[0]];
-        console.log("=======>", this.userData);
+        // console.log("=======>", this.userData);
   
       };
       reader.readAsBinaryString(e.target.files[0]);
