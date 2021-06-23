@@ -65,4 +65,10 @@ export class StudentListComponent implements OnInit {
     XLSX.writeFile(wb, "student_data" + '.xlsx');
   }
 
+  public downloadAll() {
+    let ws = XLSX.utils.json_to_sheet(this.Student);
+    const workbook: XLSX.WorkBook = { Sheets: { 'data': ws }, SheetNames: ['data'] };
+    XLSX.writeFile(workbook, "all_student_data.xlsx");
+  }
+
 }

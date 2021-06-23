@@ -4,7 +4,8 @@
     <a routerLink="/register-student" class="btn btn-success" *ngIf="hideWhenNoStudent">
       Add Student
     </a> &nbsp;
-    <a class="btn btn-info" (click)="exportToFile()" *ngIf="hideWhenNoStudent">download</a>
+    <a class="btn btn-info" (click)="exportToFile()" *ngIf="hideWhenNoStudent">Download</a> &nbsp;
+    <a class="btn btn-primary" (click)="downloadAll()" *ngIf="hideWhenNoStudent">Download All</a>
   </div>
   </div>
   
