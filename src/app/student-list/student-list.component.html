@@ -1,9 +1,11 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h2 class="h2">Students List</h2>
+    <div>
     <a routerLink="/register-student" class="btn btn-success" *ngIf="hideWhenNoStudent">
       Add Student
-    </a>
+    </a> &nbsp;
     <a class="btn btn-info" (click)="exportToFile()" *ngIf="hideWhenNoStudent">download</a>
+  </div>
   </div>
   
   <div class="pricing-header mx-auto">
