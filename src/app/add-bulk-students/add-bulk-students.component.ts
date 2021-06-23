@@ -60,7 +60,7 @@ export class AddBulkStudentsComponent implements OnInit {
 
   addUsers() {
     if(this.userData) {
-      var currData =  {};
+      var currData = {};
       this.userData.forEach(element => {
         currData['firstName'] = element.firstName;
         currData['lastName'] = element.lastName;
