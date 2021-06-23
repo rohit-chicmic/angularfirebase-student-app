@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../shared/crud.service';
 import { Student } from './../shared/student'; 
 import { ToastrService } from 'ngx-toastr';
+import * as XLSX from 'xlsx';
 
 
 @Component({
@@ -55,6 +56,13 @@ export class StudentListComponent implements OnInit {
       this.crudApi.DeleteStudent(student.$key)
       this.toastr.success(student.firstName + ' successfully deleted!');
     }
+  }
+
+  public exportToFile() {
+
+    let tbl = document.getElementById("dataTable");
+    let wb = XLSX.utils.table_to_book(tbl);
+    XLSX.writeFile(wb, "student_data" + '.xlsx');
   }
 
 }
