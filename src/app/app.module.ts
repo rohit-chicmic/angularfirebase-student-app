@@ -13,6 +13,7 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AddBulkStudentsComponent } from './add-bulk-students/add-bulk-students.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AppComponent,
     AddStudentComponent,
     EditStudentComponent,
-    StudentListComponent
+    StudentListComponent,
+    AddBulkStudentsComponent
   ],
   imports: [
     BrowserModule,

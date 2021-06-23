@@ -13,7 +13,7 @@ export class CrudService {
   constructor(private db: AngularFireDatabase) { }
 
   // Create Student
-  AddStudent(student: Student) {
+  AddStudent(student) {
     this.studentsRef.push({
       firstName: student.firstName,
       lastName: student.lastName,
