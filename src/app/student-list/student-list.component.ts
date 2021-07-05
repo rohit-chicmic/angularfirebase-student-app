@@ -17,6 +17,9 @@ export class StudentListComponent implements OnInit {
   hideWhenNoStudent: boolean = false;
   noData: boolean = false;
   preLoader: boolean = true;
+
+  masterSelected:boolean;
+  checkedList:any;
   
 
   constructor(
@@ -26,6 +29,7 @@ export class StudentListComponent implements OnInit {
 
 
   ngOnInit() {
+    this.masterSelected=false;
     this.dataState();
     let s = this.crudApi.GetStudentsList(); 
     s.snapshotChanges().subscribe(data => {
@@ -33,6 +37,7 @@ export class StudentListComponent implements OnInit {
       data.forEach(item => {
         let a = item.payload.toJSON(); 
         a['$key'] = item.key;
+        a['isSelected']=false;
         this.Student.push(a as Student);
       })
     })
@@ -70,5 +75,30 @@ export class StudentListComponent implements OnInit {
     const workbook: XLSX.WorkBook = { Sheets: { 'data': ws }, SheetNames: ['data'] };
     XLSX.writeFile(workbook, "all_student_data.xlsx");
   }
+
+
+  checkUncheckAll() {
+    for (var i = 0; i < this.Student.length; i++) {
+      this.Student[i].isSelected = this.masterSelected;
+    }
+    this.getCheckedItemList();
+  }
+  isAllSelected() {
+    this.masterSelected = this.Student.every(function(student:any) {
+        return student.isSelected == true;
+      })
+    this.getCheckedItemList();
+  }
+
+  getCheckedItemList(){
+    this.checkedList = [];
+    for (var i = 0; i < this.Student.length; i++) {
+      if(this.Student[i].isSelected)
+      this.checkedList.push(this.Student[i].$key);
+    }
+    this.checkedList = JSON.stringify(this.checkedList);
+    console.log(this.checkedList);
+  }
+
 
 }

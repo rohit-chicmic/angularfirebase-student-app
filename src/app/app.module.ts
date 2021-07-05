@@ -11,7 +11,7 @@ import { AddStudentComponent } from './add-student/add-student.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { ToastrModule } from 'ngx-toastr';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AddBulkStudentsComponent } from './add-bulk-students/add-bulk-students.component';
 
@@ -32,7 +32,8 @@ import { AddBulkStudentsComponent } from './add-bulk-students/add-bulk-students.
     ToastrModule.forRoot(),
     ReactiveFormsModule,
     NgxPaginationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

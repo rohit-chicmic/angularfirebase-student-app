@@ -4,5 +4,6 @@ export class Student {
     lastName: string;
     email: string;
     mobileNumber: Number;
-    $key?: string
+    $key?: string;
+    isSelected?: boolean
 }
